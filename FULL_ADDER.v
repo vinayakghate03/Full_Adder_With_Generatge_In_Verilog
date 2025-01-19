@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module FULL_ADDER(   // this is my submodule
+module FULL_ADDER(   // this is submodule
              input X, Y, Z,
              output SUM, CARRY
     );
@@ -32,7 +32,7 @@ module FULL_ADDER(   // this is my submodule
 
 endmodule
 
-//we are creating the generate module to generate the N-number of the instantiation for create the N-number of the adders 
+//we are creating the generate module to generate the N-number of the instantiation for creating the N-number of the adders 
 
 module generator #(parameter N_FA = 0) // assign defult value
      (
@@ -44,10 +44,10 @@ module generator #(parameter N_FA = 0) // assign defult value
       genvar  i ;// create the  variable
        
        generate // keyword to generate N
-        //This is for-loop generator
+        //This is a for-loop generator
           for( i = 0 ;i < N_FA; i = i + 1) begin
            
-//         we are creating instance for the N number of FULL ADDER generated which is known as the inner instance 
+//We are creating an instance for the N number of FULL ADDER generated which is known as the inner instance 
 
              FULL_ADDER My_Ganerate_Instance(   // this is the Sub module instantiation
              
